@@ -13,7 +13,7 @@ import User from "./pages/user/User";
 import NewUser from "./pages/newUser/NewUser";
 import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
-import NewProduct from "./pages/newProduct/NewProduct";
+// import NewProduct from "./pages/newProduct/NewProduct";
 import Login from "./pages/login/Login";
 import { useSelector } from "react-redux";
 import ProductModal from "./components/product-modal/productModal";
@@ -51,9 +51,9 @@ function App() {
                 <Route path="/product/:productId">
                   <Product />
                 </Route>
-                <Route path="/newproduct">
+                {/* <Route path="/newproduct">
                   <NewProduct />
-                </Route>
+                </Route> */}
                 <Route path="/productModal">
                   <ProductModal />
                 </Route>
