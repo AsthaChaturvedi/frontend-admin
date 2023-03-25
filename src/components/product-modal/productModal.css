@@ -1,0 +1,32 @@
+.product-form-container{
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+}
+
+.indiv-container{
+    display: flex;
+    flex-direction:column;
+    margin-bottom: 10px;
+}
+
+.indiv-container input{
+    border: none;
+    border-bottom: 1px solid grey;
+    width: 500px;
+
+}
+
+.add-btn{
+    color: white;
+    background-color: darkblue;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+*:focus {
+    outline: none;
+}
