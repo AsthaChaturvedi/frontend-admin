@@ -46,12 +46,21 @@ export const updateProduct = async (dispatch, id, product) => {
     dispatch(getProductFailure());
   }
 };
-export const addProduct = async (product, dispatch) => {
-  dispatch(getProductStart());
-  try {
-    const res = await userRequest.post("/products", product);
-    dispatch(getProductSuccess(res.data));
-  } catch (error) {
-    dispatch(getProductFailure());
-  }
+export const addProduct =  (product, dispatch) => {
+
+  // dispatch(getProductStart());
+   userRequest.post("/products", JSON.stringify(product)).then(r=>{
+    alert(JSON.stringify(r));
+  }).catch(e=>{
+    alert(JSON.stringify(e));
+  });
+  // try {
+  //   const res = await userRequest.post("/products", product).then(r=>{
+  //     console.log(r);
+  //   });
+  //   dispatch(getProductSuccess(res.data));
+  // } catch (error) {
+  //   alert(JSON.stringify(error))
+  //   // dispatch(getProductFailure());
+  // }
 };

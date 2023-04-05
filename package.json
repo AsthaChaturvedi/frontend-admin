@@ -1,7 +1,7 @@
 {
   "name": "Redzari",
   "version": "0.1.0",
-  "homepage": "https://asthachaturvedi.github.io/frontend-admin/",
+  "homepage": "http://redzari.in/",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.4",

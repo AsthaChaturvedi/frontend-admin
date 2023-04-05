@@ -1,13 +1,13 @@
 import { Box, Button, Modal } from "@material-ui/core"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { addProduct } from "../../redux/productSlice"
+import {addProduct} from '../../redux/apiCalls'
 import './productModal.css'
 const product = {
-    productNae: "",
+    productName: "",
     category: "",
     price: "",
-    unitNo: "",
+    unitNumber: "",
     vendor: "",
     available: "",
     size: "",
@@ -26,7 +26,7 @@ export default function ProductModal() {
     const dispatch = useDispatch()
     const cart = useSelector((state) => state.product)
 
-    console.log(cart)
+    // console.log(cart)
 
     // onChangeInput(e) {
     //     const { name, value } = e.target;
@@ -44,17 +44,30 @@ export default function ProductModal() {
     }
 
 
-    //   const handleSubmit=(e)=>{
-    //     e.preventDefault()
-    //     console.log(newProduct)
-    //   }
-
-
-    const handleSubmit = (e) => {
+      const handleSubmit=(e)=>{
         e.preventDefault()
-        dispatch(addProduct(newProduct))
         console.log(newProduct)
-    }
+        alert(newProduct)
+        console.log("arzoo")
+      }
+
+
+
+
+
+    // const handleSubmit = () => {
+    //     addProduct({
+    //         title:newProduct.productNae,
+    //         desc:newProduct.description,
+    //         price:newProduct.price,
+    //         size:[23,45],
+    //         categories:newProduct.category,
+    //         image:newProduct.photo,
+    //         inStock:true,
+    //         colour:["red","blue"]
+
+    //     },dispatch)
+    // }
 
 
     return (
@@ -97,7 +110,7 @@ export default function ProductModal() {
                     </div>
                     <div className="indiv-container" >
                         <label>photo</label>
-                        <input name="photo" type="text" placeholder="photo" onChange={handleChange} />
+                        <input name="photo" type="img" placeholder="photo" onChange={handleChange} />
                     </div>
                     <div className="indiv-container" >
                         <label>Quantity</label>
@@ -112,7 +125,9 @@ export default function ProductModal() {
                         <input name="brand" type="text" placeholder="Brand" onChange={handleChange} />
                     </div>
 
-                    <button type='submit' className="add-btn" onClick={() => handleSubmit()} >Add Product</button>
+                    <button type='submit' className="add-btn"
+                     onClick={ handleSubmit} 
+                     >Add Product</button>
                 </form>
             </div>
         </div>
