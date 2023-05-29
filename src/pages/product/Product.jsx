@@ -11,7 +11,6 @@ export default function Product() {
   const product = useSelector((state) =>
     state.product.products.find((p) => p._id === productId)
   );
-  console.log("product:", product.inStock);
   return (
     <div className="product">
       <div className="productTitleContainer">

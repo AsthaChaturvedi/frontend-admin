@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteProduct, getProducts } from "../../redux/apiCalls";
 import { userData } from "../../dummyData";
-
+import "../product/product.css";
 export default function ProductList() {
   const products = useSelector((state) => state.product.products);
   const dispatch = useDispatch();
@@ -64,6 +64,12 @@ console.log();
 
   return (
     <div className="productList">
+      <div className="productTitleContainer">
+        <h1 className="productTitle">Product</h1>
+        <Link to="/newproduct">
+          <button className="productAddButton">Create</button>
+        </Link>
+      </div>
       <DataGrid
         rows={products}
         disableSelectionOnClick
